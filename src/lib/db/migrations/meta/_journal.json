@@ -15,6 +15,13 @@
       "when": 1693285703117,
       "tag": "0001_hesitant_redwing",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1693317901246,
+      "tag": "0002_sturdy_red_hulk",
+      "breakpoints": true
     }
   ]
 }
