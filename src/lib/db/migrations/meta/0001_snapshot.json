@@ -1,0 +1,36 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "id": "12bbe347-7963-44e6-8e3f-9e91b4cfc72d",
+  "prevId": "d3cbfb08-bd38-4af9-b0e4-1b5b0b3248d9",
+  "tables": {
+    "todo": {
+      "name": "todo",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "content": {
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {}
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
