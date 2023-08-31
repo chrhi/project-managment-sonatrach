@@ -64,12 +64,10 @@ export function SignInForm() {
         className="flex flex-col gap-y-4 w-[98%]   lg:w-[30%]  rounded-lg mx-auto justify-center  p-8 h-[500px]   "
         onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
-        <h1 className="text-xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-gray-900">
           Sign in to ProjectFlow
         </h1>
-        <p className="text-md  text-gray-900">
-          Not your device? Use a private or incognito window to sign in.
-        </p>
+
         <FormField
           control={form.control}
           name="email"
@@ -119,6 +117,7 @@ export function SignInForm() {
           Sign in
           <span className="sr-only">Sign in</span>
         </Button>
+
         <p>
           {" "}
           {/* eslint-disable-next-line react/no-unescaped-entities */}

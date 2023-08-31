@@ -1,9 +1,7 @@
 import Providers from "@/components/Providers";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "DRIZZLE OH YEAH",
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Providers>{children}</Providers>
         <Toaster />
       </body>

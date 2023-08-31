@@ -1,8 +1,6 @@
+import { prisma } from "@/lib/prisma";
 import { registerSchema } from "@/lib/validations/auth";
 import bcrypt from "bcrypt";
-import { db } from "@/lib/db";
-import { users } from "@/lib/db/schema";
-import { v4 as uuidv4 } from "uuid";
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -15,14 +13,33 @@ export async function POST(req: Request) {
     throw new Error("something went wrong ");
   });
 
-  await db.insert(users).values({
-    id: uuidv4(),
-    email: data.email,
-    name: data.firstName,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGlZkIqki43f4vMGa-DljqZBCOr6D6Cm_l_kDM06YEjL2QWlKZY_glSuSJGybsUIHmdpc&usqp=CAU",
-    emailVerified: new Date(),
-    password: hasedPassword,
+  const user = await prisma.user.create({
+    data: {
+      email: data.email,
+      name: data.firstName,
+      LastName: data.lastName,
+      emailVerified: new Date(),
+      password: hasedPassword,
+    },
+  });
+
+  const members: Member[] = [
+    {
+      email: user.email,
+      firstName: user.name || "",
+      lastName: user.LastName || "",
+      id: user.id,
+      image: user.image || "",
+      role: "Admin",
+    },
+  ];
+
+  await prisma.organization.create({
+    data: {
+      name: "my organization",
+      description: "",
+      Members: JSON.stringify(members),
+    },
   });
 
   return new Response(

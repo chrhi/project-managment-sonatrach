@@ -57,11 +57,19 @@ import {
   VolumeX,
   Wallet,
   X,
+  Bell,
+  LayoutDashboard,
+  MessageCircle,
+  FolderOpenDot,
+  CheckSquare,
+  FlaskConical,
+  FolderKanban,
+  File,
   type LucideIcon,
   type LucideProps,
-} from "lucide-react"
+} from "lucide-react";
 
-export type Icon = LucideIcon
+export type Icon = LucideIcon;
 
 export const Icons = {
   sun: SunMedium,
@@ -122,6 +130,14 @@ export const Icons = {
   clothing: Shirt,
   shoes: Footprints,
   accessories: HardHat,
+  bell: Bell,
+  dashBoard: LayoutDashboard,
+  chat: MessageCircle,
+  projects: FolderOpenDot,
+  tasks: CheckSquare,
+  wbs: FlaskConical,
+  docs: File,
+  boards: FolderKanban,
   logo: (props: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -188,4 +204,4 @@ export const Icons = {
       />
     </svg>
   ),
-}
+};

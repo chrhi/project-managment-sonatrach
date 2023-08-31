@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 
 function page() {
   return (
-    <div className="w-full h-screen flex  flex-col  gap-x-8 gap-y-16">
+    <div className="w-full bg-white h-screen flex  flex-col  gap-x-8 gap-y-16">
       <Suspense>
         <NoAuthHeader />
       </Suspense>

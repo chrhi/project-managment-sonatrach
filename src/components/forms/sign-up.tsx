@@ -71,10 +71,10 @@ export function SignUnForm() {
   return (
     <Form {...form}>
       <form
-        className="flex flex-col my-5 gap-y-4 w-[98%]   lg:w-[50%] rounded-lg mx-auto justify-center  p-8 h-[700px]   "
+        className="flex max-w-4xl flex-col my-5 gap-y-4 w-[98%]   lg:w-[50%] rounded-lg mx-auto justify-center  p-8 h-[700px]   "
         onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
-        <h1 className="text-xl font-bold text-gray-900">Create an account</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Create an account</h1>
         <p className="text-md  text-gray-900">
           Be sure to enter your legal name as it appears on your
           government-issued ID.
@@ -167,7 +167,7 @@ export function SignUnForm() {
         <p>
           {" "}
           Do you have an account ?{" "}
-          <Link href={"/sign-up"} className="text-blue-500 text-lg ">
+          <Link href={"/sign-in"} className="text-blue-500 text-lg ">
             sign in
           </Link>
         </p>

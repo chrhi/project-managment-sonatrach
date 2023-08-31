@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 
 function page() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full bg-white min-h-screen h-full ">
       <Suspense>
         <NoAuthHeader />
       </Suspense>

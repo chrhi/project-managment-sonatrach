@@ -4,7 +4,7 @@ import React from "react";
 
 function NoAuthHeader() {
   return (
-    <div className="w-full h-[50px] border-b ">
+    <div className="w-full sticky top-0 bg-white h-[50px] border-b ">
       <div className=" flex items-center w-full h-full justify-between  container">
         <Image src={"/logo.png"} alt="logo" width={35} height={35} />
         <Button variant="ghost">log in</Button>
