@@ -60,7 +60,7 @@ export function SignUnForm() {
       toast({
         title: "new user has been created",
       });
-      router.push("/sign-in");
+      router.push("/");
     },
   });
 

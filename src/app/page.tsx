@@ -1,9 +1,17 @@
-export default async function Home() {
+import { SignInForm } from "@/components/forms/sign-in";
+import NoAuthHeader from "@/components/layout/Header/NoAuthHeader";
+import React, { Suspense } from "react";
+
+function page() {
   return (
-    <div className="w-full h-screen bg-white flex  flex-col items-center justify-center">
-      <h1 className="text-2xl font-bold ">
-        this is my project managment application
-      </h1>
+    <div className="w-full bg-white h-screen flex  flex-col  gap-x-8 gap-y-16">
+      <Suspense>
+        <NoAuthHeader />
+      </Suspense>
+
+      <SignInForm />
     </div>
   );
 }
+
+export default page;
