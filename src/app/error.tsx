@@ -1,19 +1,44 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
+
+import { Button } from "@/components/ui/button";
 
 export default function Error({ reset }: { reset: () => void }) {
   return (
-    <div className="mx-auto my-4 flex max-w-xl flex-col  mt-8 rounded-lg border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-black md:p-12">
-      <h2 className="text-xl font-bold">Oh no!</h2>
-      <p className="my-2">
-        There was an issue with our web site. This could be a temporary issue,
-        please try your action again.
-      </p>
-      <button
-        className="mx-auto mt-4 flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white hover:opacity-90"
-        onClick={() => reset()}
-      >
-        Try Again
-      </button>
+    <div className="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16">
+      <div className="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">
+        <div className="relative">
+          <div className="absolute">
+            <div className="">
+              <h1 className="my-2 text-gray-800 dark:text-white font-bold text-2xl">
+                Looks like you've found the doorway to the great nothing
+              </h1>
+              <p className="my-2 text-gray-800 dark:text-gray-200 ">
+                Sorry about that! Please visit our hompage to get where you need
+                to go.
+              </p>
+              <Button
+                size={"lg"}
+                onClick={() => reset()}
+                className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center  text-white focus:outline-none focus:ring-2  focus:ring-opacity-50"
+              >
+                Try again!
+              </Button>
+              <Button
+                size={"lg"}
+                variant={"ghost"}
+                onClick={() => reset()}
+                className="sm:w-full  ml-6 lg:w-auto my-2 border rounded md py-4 px-8 text-center  text-white focus:outline-none focus:ring-2  focus:ring-opacity-50"
+              >
+                Go to home
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+      </div>
     </div>
   );
 }

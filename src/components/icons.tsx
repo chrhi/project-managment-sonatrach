@@ -65,6 +65,7 @@ import {
   FlaskConical,
   FolderKanban,
   File,
+  Pencil,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";
@@ -137,6 +138,7 @@ export const Icons = {
   tasks: CheckSquare,
   wbs: FlaskConical,
   docs: File,
+  pencil: Pencil,
   boards: FolderKanban,
   logo: (props: LucideProps) => (
     <svg

@@ -24,11 +24,13 @@ model Account {
   refresh_token     String? @db.Text
   access_token      String? @db.Text
   expires_at        Int?
- 
+
   token_type        String?
   scope             String?
   id_token          String? @db.Text
   session_state     String?
+
+
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@index([userId])
@@ -45,6 +47,8 @@ model User {
   password         String?
   image            String?
   selectedOrganizationId String? 
+  DateOfBirth       DateTime?
+  
   role             ROLES     @default(TeamMember)
   accounts         Account[]
   sessions         Session[]

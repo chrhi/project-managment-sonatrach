@@ -1,7 +1,10 @@
 import { Separator } from "@/components/ui/separator";
 import { AccountForm } from "./account-form";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import { prisma } from "@/lib/prisma";
 
-export default function SettingsAccountPage() {
+export default async function SettingsAccountPage() {
   return (
     <div className="space-y-6">
       <div>

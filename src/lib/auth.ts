@@ -20,7 +20,7 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials, req) {
         console.log(credentials?.email);
         console.log(credentials?.password);
-        const user = await prisma.user.findUnique({
+        const user = await prisma.user.findFirst({
           where: {
             email: credentials?.email,
           },
@@ -55,12 +55,46 @@ export const authOptions: NextAuthOptions = {
     updateAge: 24 * 60 * 60,
   },
   pages: {
-    signIn: "/sign-in",
-    error: "/",
+    signIn: "/",
   },
   callbacks: {
     redirect() {
       return "/private";
+    },
+    session({ token, session }) {
+      if (token) {
+        (session.user.id = token.id),
+          (session.user.email = token.email),
+          (session.user.name = token.name),
+          (session.user.image = token.picture);
+        (session.user.role = token.role),
+          (session.user.firstName = token.firstName);
+        (session.user.lastName = token.lastName),
+          (session.user.role = token.role);
+      }
+
+      return session;
+    },
+    //@ts-ignore
+    async jwt({ token, user }) {
+      const dbUser = await prisma.user.findUnique({
+        where: {
+          email: token.email as string,
+        },
+      });
+
+      if (!dbUser) return token;
+      return {
+        ...token,
+        id: dbUser.id,
+        email: dbUser.email,
+        name: dbUser.name,
+        picture: dbUser.image,
+        firstName: dbUser.name,
+        lastName: dbUser.LastName,
+        role: dbUser.role,
+        userName: dbUser.UserName,
+      };
     },
   },
 };

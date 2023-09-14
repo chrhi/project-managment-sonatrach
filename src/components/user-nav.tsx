@@ -27,15 +27,18 @@ export async function UserNav() {
             "relative h-8 w-8 flex justify-center items-center rounded-full"
           )}
         >
-          <Icons.settings className="w-5 h-5 text-[#64748B]" />
+          <Icons.settings className="w-5 h-5 text-[#64748B] dark:text-white " />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-72 p-0 " align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex items-center h-[50px]  w-full justify-start  gap-x-4 ">
             <Avatar className="h-12 w-12 ">
-              <AvatarImage src={session?.user.image || ""} alt="@shadcn" />
-              <AvatarFallback>SC</AvatarFallback>
+              <AvatarImage
+                src={session?.user.image || "/assets/avatar.png"}
+                alt="@abdullah"
+              />
+              <AvatarFallback>AB</AvatarFallback>
             </Avatar>
 
             <div>

@@ -64,7 +64,7 @@ export function SignInForm() {
         className="flex flex-col gap-y-4 w-[98%]   lg:w-[30%]  rounded-lg mx-auto justify-center  p-8 h-[500px]   "
         onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
           Sign in to ProjectFlow
         </h1>
 

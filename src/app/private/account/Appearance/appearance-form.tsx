@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -53,6 +54,8 @@ export function AppearanceForm() {
     });
   }
 
+  const { theme, setTheme } = useTheme();
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -96,8 +99,10 @@ export function AppearanceForm() {
               </FormDescription>
               <FormMessage />
               <RadioGroup
-                onValueChange={field.onChange}
-                defaultValue={field.value}
+                onValueChange={(field) => {
+                  setTheme(field.valueOf());
+                }}
+                defaultValue={theme}
                 className="grid max-w-md grid-cols-2 gap-8 pt-2"
               >
                 <FormItem>
@@ -156,8 +161,6 @@ export function AppearanceForm() {
             </FormItem>
           )}
         />
-
-        <Button type="submit">Update preferences</Button>
       </form>
     </Form>
   );

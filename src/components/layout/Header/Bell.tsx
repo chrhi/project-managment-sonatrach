@@ -15,7 +15,7 @@ function Bell() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button>
-          <Icons.bell className="w-5 h-5 text-[#64748B]" />
+          <Icons.bell className="w-5 h-5 text-[#64748B] dark:text-white " />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
